@@ -141,7 +141,7 @@ Contoh isi file eas.json yang sudah diubah:
     }
   }
 
-    Sekarang, jalankan perintah build dengan menentukan profil preview:
+  Sekarang, jalankan perintah build dengan menentukan profil preview:
 
     eas build -p android --profile preview
 
