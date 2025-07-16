@@ -62,16 +62,16 @@ Proyek ini dibangun dari awal menggunakan framework React Native dan Expo, denga
 ### 1. Instalasi Dependensi
 
 Pastikan Anda memiliki Node.js di komputer Anda. Buka terminal di dalam direktori proyek dan jalankan:
-
+```
   npm install
-
+```
 Perintah ini akan menginstal semua pustaka yang diperlukan oleh proyek.
 ### 2. Menjalankan Aplikasi
 
 Untuk memulai server pengembangan Expo, jalankan:
-
+```
   npx expo start
-
+```
 Dari output di terminal, Anda dapat memilih untuk:
 
     Memindai kode QR menggunakan aplikasi Expo Go di ponsel Anda.
@@ -84,28 +84,28 @@ Untuk membuat file aplikasi yang dapat diinstal (.apk untuk Android atau .ipa un
 ### Langkah 1: Instal EAS CLI
 
 Jika Anda belum menginstalnya, buka terminal dan jalankan perintah global berikut:
-
+```
   npm install -g eas-cli
-
+```
 ### Langkah 2: Login ke Akun Expo
 
 Pastikan Anda sudah memiliki akun di expo.dev. Kemudian, login melalui terminal:
-
+```
   eas login
-
+```
 ### Langkah 3: Konfigurasi Proyek untuk Build
 
 Di dalam direktori proyek Anda, jalankan perintah ini untuk membuat file eas.json:
-
+```
   eas build:configure
-
+```
 Anda dapat menerima semua pilihan default yang ditawarkan.
 ### Langkah 4: Membuat AAB untuk Google Play Store
 
 Secara default, EAS akan membuat file .aab (Android App Bundle). Ini adalah format yang diwajibkan untuk diunggah ke Google Play Store.
-
+```
   eas build --platform android
-
+```
 File .aab ini tidak bisa diinstal langsung di perangkat untuk pengetesan.
 ### Langkah 5: Membuat APK untuk Pengetesan
 
