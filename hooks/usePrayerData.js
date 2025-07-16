@@ -72,6 +72,14 @@ export function usePrayerData() {
             params.madhab = settings.asr === 'hanafi' ? Madhab.Hanafi : Madhab.Shafi;
             
             const pt = new PrayerTimes(coordinates, date, params);
+
+            // // --- FOR TESTING ALARM ---
+            // // This will set the Dhuhr prayer time to 5 seconds from now.
+            // const testDate = new Date();
+            // testDate.setSeconds(testDate.getSeconds() + 5);
+            // pt.dhuhr = testDate; 
+            // // -------------------------
+
             setPrayerTimes(pt);
 
             // Set Formatted Dates using reliable methods
