@@ -1,50 +1,102 @@
-# Welcome to your Expo app 👋
+Jam Sholat Digital
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+<p align="center">
+<img src="https://i.imgur.com/Asa2B3W.png" alt="Logo Aplikasi Jam Sholat Digital" width="128"/>
+</p>
 
-## Get started
+<p align="center">
+Aplikasi jam sholat digital modern yang dibuat dengan Expo dan React Native.
+</p>
+Deskripsi
 
-1. Install dependencies
+Jam Sholat Digital adalah aplikasi seluler yang dirancang untuk memberikan informasi waktu sholat yang akurat dan dapat disesuaikan. Aplikasi ini secara otomatis mendeteksi lokasi pengguna untuk menghitung jadwal sholat harian dan menyajikannya dalam antarmuka yang bersih, modern, dan mudah dibaca. Selain itu, aplikasi ini dilengkapi dengan alarm adzan yang dapat dikonfigurasi, penyesuaian tanggal Hijriah, dan berbagai metode perhitungan untuk memenuhi kebutuhan pengguna di seluruh dunia.
 
-   ```bash
-   npm install
-   ```
+Proyek ini dibangun dari awal menggunakan framework React Native dan Expo, dengan fokus pada pengalaman pengguna yang lancar dan fungsionalitas yang andal, baik online maupun offline.
+✨ Fitur Utama
 
-2. Start the app
+    Waktu Sholat Otomatis: Menghitung jadwal sholat harian (Subuh, Dzuhur, Ashar, Maghrib, Isya) secara akurat berdasarkan lokasi GPS pengguna.
 
-   ```bash
-   npx expo start
-   ```
+    Tampilan Informatif:
 
-In the output, you'll find options to open the app in a
+        Jam digital modern yang menampilkan jam dan menit.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+        Tampilan tanggal Gregorian dan Hijriah secara bersamaan.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+        Hitung mundur (countdown) ke waktu sholat berikutnya.
 
-## Get a fresh project
+    Alarm Adzan Cerdas:
 
-When you're ready, run:
+        Alarm berbunyi saat waktu sholat tiba, diawali dengan bunyi bip singkat.
 
-```bash
-npm run reset-project
-```
+        Suara adzan yang berbeda untuk Subuh dan waktu sholat lainnya.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+        Tombol "Hentikan" untuk mematikan adzan yang sedang diputar.
 
-## Learn more
+        Kemampuan untuk mengaktifkan atau menonaktifkan alarm melalui menu Pengaturan.
 
-To learn more about developing your project with Expo, look at the following resources:
+        Audio dapat berjalan di latar belakang (background).
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+    Kustomisasi Penuh:
 
-## Join the community
+        Metode Perhitungan: Pilih dari berbagai metode perhitungan populer (Kemenag, Muslim World League, ISNA, dll.).
 
-Join our community of developers creating universal apps.
+        Mazhab Asar: Sesuaikan perhitungan waktu Ashar antara metode Standar (Jumhur) dan Hanafi.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+        Penyesuaian Tanggal Hijriah: Koreksi tanggal Hijriah (± 2 hari) agar sesuai dengan pengamatan lokal.
+
+    Dukungan Offline: Setelah lokasi awal ditetapkan, aplikasi tidak memerlukan koneksi internet untuk menghitung waktu sholat.
+
+    Antarmuka Adaptif: Desain yang dioptimalkan untuk keterbacaan yang jelas di ponsel dan perangkat berlayar besar seperti Smart TV.
+
+🚀 Memulai
+1. Instalasi Dependensi
+
+Pastikan Anda memiliki Node.js di komputer Anda. Buka terminal di dalam direktori proyek dan jalankan:
+
+npm install
+
+Perintah ini akan menginstal semua pustaka yang diperlukan oleh proyek.
+2. Menjalankan Aplikasi
+
+Untuk memulai server pengembangan Expo, jalankan:
+
+npx expo start
+
+Dari output di terminal, Anda dapat memilih untuk:
+
+    Memindai kode QR menggunakan aplikasi Expo Go di ponsel Anda.
+
+    Menjalankan aplikasi di Android Emulator atau iOS Simulator.
+
+📦 Membangun Aplikasi (Build) untuk Produksi
+
+Untuk membuat file aplikasi yang dapat diinstal (.apk untuk Android atau .ipa untuk iOS), Anda perlu menggunakan EAS (Expo Application Services).
+Langkah 1: Instal EAS CLI
+
+Jika Anda belum menginstalnya, buka terminal dan jalankan perintah global berikut:
+
+npm install -g eas-cli
+
+Langkah 2: Login ke Akun Expo
+
+Pastikan Anda sudah memiliki akun di expo.dev. Kemudian, login melalui terminal:
+
+eas login
+
+Langkah 3: Konfigurasi Proyek untuk Build
+
+Di dalam direktori proyek Anda, jalankan perintah ini untuk membuat file eas.json:
+
+eas build:configure
+
+Anda dapat menerima semua pilihan default yang ditawarkan.
+Langkah 4: Mulai Proses Build
+
+Untuk membuat file .apk yang dapat diinstal di perangkat Android, jalankan:
+
+eas build --platform android
+
+Proses ini akan meng-upload proyek Anda ke server Expo dan melakukan build di cloud. Ini mungkin memakan waktu 10-20 menit.
+Langkah 5: Unduh dan Instal
+
+Setelah proses build selesai, Anda akan mendapatkan tautan di terminal. Buka tautan tersebut di browser Anda. Di halaman tersebut, Anda akan menemukan tombol untuk mengunduh file .apk yang sudah jadi. Pindahkan file tersebut ke perangkat Android Anda dan instal.
