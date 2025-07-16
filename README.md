@@ -1,3 +1,8 @@
+<h1 align="left">NIM : 23.01.53.3001</h1>
+<h1 align="left">Nama : Muhammad Naufal Zaidan</h1>
+<h1 align="left">Mata Kuliah : Pemrograman Aplikasi Mobile</h1>
+
+
 <h1 align="center">Jam Sholat Digital</h1>
 
 <p align="center">

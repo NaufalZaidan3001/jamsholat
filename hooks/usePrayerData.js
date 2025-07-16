@@ -77,7 +77,7 @@ export function usePrayerData() {
             // // This will set the Dhuhr prayer time to 5 seconds from now.
             // const testDate = new Date();
             // testDate.setSeconds(testDate.getSeconds() + 5);
-            // pt.dhuhr = testDate; 
+            // pt.asr = testDate; 
             // // -------------------------
 
             setPrayerTimes(pt);
