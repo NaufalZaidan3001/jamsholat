@@ -49,14 +49,14 @@ Proyek ini dibangun dari awal menggunakan framework React Native dan Expo, denga
     Antarmuka Adaptif: Desain yang dioptimalkan untuk keterbacaan yang jelas di ponsel dan perangkat berlayar besar seperti Smart TV.
 
 ## 🚀 Memulai
-1. Instalasi Dependensi
+### 1. Instalasi Dependensi
 
 Pastikan Anda memiliki Node.js di komputer Anda. Buka terminal di dalam direktori proyek dan jalankan:
 
 npm install
 
 Perintah ini akan menginstal semua pustaka yang diperlukan oleh proyek.
-2. Menjalankan Aplikasi
+### 2. Menjalankan Aplikasi
 
 Untuk memulai server pengembangan Expo, jalankan:
 
@@ -90,13 +90,51 @@ Di dalam direktori proyek Anda, jalankan perintah ini untuk membuat file eas.jso
 eas build:configure
 
 Anda dapat menerima semua pilihan default yang ditawarkan.
-### Langkah 4: Mulai Proses Build
+### Langkah 4: Membuat AAB untuk Google Play Store
 
-Untuk membuat file .apk yang dapat diinstal di perangkat Android, jalankan:
+Secara default, EAS akan membuat file .aab (Android App Bundle). Ini adalah format yang diwajibkan untuk diunggah ke Google Play Store.
 
 eas build --platform android
 
-Proses ini akan meng-upload proyek Anda ke server Expo dan melakukan build di cloud. Ini mungkin memakan waktu 10-20 menit.
-### Langkah 5: Unduh dan Instal
+File .aab ini tidak bisa diinstal langsung di perangkat untuk pengetesan.
+### Langkah 5: Membuat APK untuk Pengetesan
+
+Jika Anda ingin file .apk yang bisa langsung diinstal di perangkat Android untuk pengetesan, Anda perlu mengubah file eas.json.
+
+    Buka file eas.json.
+
+    Cari profil preview (atau development).
+
+    Tambahkan baris "android.buildType": "apk".
+
+Contoh isi file eas.json yang sudah diubah:
+
+{
+  "cli": {
+    "version": ">= 7.6.0"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk" 
+      }
+    },
+    "production": {}
+  },
+  "submit": {
+    "production": {}
+  }
+}
+
+    Sekarang, jalankan perintah build dengan menentukan profil preview:
+
+    eas build -p android --profile preview
+
+### Langkah 6: Unduh dan Instal
 
 Setelah proses build selesai, Anda akan mendapatkan tautan di terminal. Buka tautan tersebut di browser Anda. Di halaman tersebut, Anda akan menemukan tombol untuk mengunduh file .apk yang sudah jadi. Pindahkan file tersebut ke perangkat Android Anda dan instal.
