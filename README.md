@@ -119,9 +119,10 @@ Jika Anda ingin file .apk yang bisa langsung diinstal di perangkat Android untuk
 
 Contoh isi file eas.json yang sudah diubah:
 
-  {
-    "cli": {
-      "version": ">= 7.6.0"
+```
+{
+  "cli": {
+    "version": ">= 7.6.0"
    },
     "build": {
       "development": {
@@ -139,7 +140,8 @@ Contoh isi file eas.json yang sudah diubah:
    "submit": {
       "production": {}
     }
-  }
+}
+```
 
   Sekarang, jalankan perintah build dengan menentukan profil preview:
 
