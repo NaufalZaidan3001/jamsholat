@@ -1,5 +1,5 @@
-import moment from 'moment';
-import { useEffect, useState } from 'react';
+import moment from 'moment'; // <-- IMPORT THE FIX
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function Clock() {
@@ -24,13 +24,13 @@ const styles = StyleSheet.create({
         alignItems: 'baseline',
     },
     clockText: {
-        fontFamily: 'Inter-Light',
+        fontFamily: 'RobotoMono-Light',
         fontSize: 80,
         color: '#FFF',
         letterSpacing: 2,
     },
     secondsText: {
-        fontFamily: 'Inter-Light',
+        fontFamily: 'RobotoMono-Light',
         fontSize: 30,
         color: '#FFF',
         marginLeft: 8,

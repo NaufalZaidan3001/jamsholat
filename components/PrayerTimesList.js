@@ -1,5 +1,6 @@
 import { Prayer } from 'adhan';
-import moment from 'moment';
+import moment from 'moment'; // <-- IMPORT THE FIX
+import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function PrayerTimesList({ prayerTimes }) {
@@ -52,12 +53,12 @@ const styles = StyleSheet.create({
         borderBottomColor: 'rgba(255, 255, 255, 0.1)',
     },
     prayerName: {
-        fontFamily: 'Inter-Regular',
+        fontFamily: 'RobotoMono-Regular',
         fontSize: 20,
         color: '#FFF',
     },
     prayerTime: {
-        fontFamily: 'Inter-Bold',
+        fontFamily: 'RobotoMono-Bold',
         fontSize: 20,
         color: '#FFF',
     },

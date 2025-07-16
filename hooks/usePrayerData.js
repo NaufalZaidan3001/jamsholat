@@ -1,14 +1,18 @@
 import { useIsFocused } from '@react-navigation/native';
 import { CalculationMethod, CalculationParameters, Coordinates, Madhab, PrayerTimes } from 'adhan';
+import moment from 'moment';
 import { useEffect, useState } from 'react';
+import { getHijriDate } from '../lib/hijri-calculator';
 import { loadSettings } from '../lib/storage';
 import { useLocation } from './useLocation';
 
-export function usePrayerData() {
+export function usePrayerData() {   
     const { location, error: locationError, isLoading: isLocationLoading } = useLocation();
     const [prayerTimes, setPrayerTimes] = useState(null);
     const [settings, setSettings] = useState(null);
-    const isFocused = useIsFocused(); // Re-fetch settings when screen is focused
+    const [gregorianDate, setGregorianDate] = useState('');
+    const [hijriDate, setHijriDate] = useState('');
+    const isFocused = useIsFocused();
 
     useEffect(() => {
         if (isFocused) {
@@ -22,20 +26,15 @@ export function usePrayerData() {
 
     useEffect(() => {
         if (location && settings && settings.calculationMethod) {
-            const coordinates = new Coordinates(location.latitude, location.longitude);
             const date = new Date();
+            const coordinates = new Coordinates(location.latitude, location.longitude);
             
             let params;
-
-            // The 'Kemenag' method is not a standard part of all adhan.js versions.
-            // We define it manually for robustness.
             if (settings.calculationMethod === 'Kemenag') {
-                params = new CalculationParameters();
+                params = new CalculationParameters('Kemenag');
                 params.fajrAngle = 20;
                 params.ishaAngle = 18;
-                params.method = "Kemenag"; // Assign a custom name
             } else {
-                // Use the switch for other standard methods
                 switch (settings.calculationMethod) {
                     case 'MuslimWorldLeague':
                         params = CalculationMethod.MuslimWorldLeague();
@@ -65,7 +64,6 @@ export function usePrayerData() {
                         params = CalculationMethod.Singapore();
                         break;
                     default:
-                        // Fallback to a default method if something goes wrong
                         params = CalculationMethod.MuslimWorldLeague();
                         break;
                 }
@@ -75,6 +73,11 @@ export function usePrayerData() {
             
             const pt = new PrayerTimes(coordinates, date, params);
             setPrayerTimes(pt);
+
+            // Set Formatted Dates using reliable methods
+            setGregorianDate(moment(date).format('dddd, DD MMMM YYYY'));
+            // Pass the adjustment value to the calculator
+            setHijriDate(getHijriDate(date, settings.hijriAdjustment));
         }
     }, [location, settings]);
 
@@ -83,5 +86,7 @@ export function usePrayerData() {
         location,
         error: locationError,
         isLoading: isLocationLoading || !settings,
+        gregorianDate,
+        hijriDate,
     };
 }

@@ -1,16 +1,18 @@
-import moment from 'moment';
 import { ActivityIndicator, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import Clock from '../../components/Clock';
 import Countdown from '../../components/Countdown';
 import PrayerTimesList from '../../components/PrayerTimesList';
 import { usePrayerData } from '../../hooks/usePrayerData';
-// All locale and Hijri config is now handled globally in app/_layout.js
 
 export default function HomeScreen() {
-  const { prayerTimes, location, error, isLoading } = usePrayerData();
-
-  const gregorianDate = moment().format('dddd, DD MMMM YYYY');
-  const hijriDate = moment().format('iD iMMMM iYYYY');
+  const { 
+    prayerTimes, 
+    location, 
+    error, 
+    isLoading, 
+    gregorianDate, 
+    hijriDate 
+  } = usePrayerData();
 
   if (isLoading) {
     return (

@@ -1,6 +1,6 @@
 import { Prayer } from 'adhan';
-import moment from 'moment';
-import { useEffect, useState } from 'react';
+import moment from 'moment'; // <-- IMPORT THE FIX
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text } from 'react-native';
 
 export default function Countdown({ prayerTimes }) {
@@ -54,7 +54,7 @@ export default function Countdown({ prayerTimes }) {
 
 const styles = StyleSheet.create({
     countdownText: {
-        fontFamily: 'Inter-Regular',
+        fontFamily: 'RobotoMono-Regular',
         fontSize: 22,
         color: '#FBBF24',
         marginTop: -10,
