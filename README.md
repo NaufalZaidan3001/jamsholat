@@ -1,14 +1,12 @@
-Jam Sholat Digital
-
 <p align="center">
+Jam Sholat Digital
 <img src="./assets/images/logo.png" alt="Logo Aplikasi Jam Sholat Digital" width="128"/>
 </p>
 
 <p align="center">
 Aplikasi jam sholat digital modern yang dibuat dengan Expo dan React Native.
-</p>
 Deskripsi
-
+</p>
 Jam Sholat Digital adalah aplikasi seluler yang dirancang untuk memberikan informasi waktu sholat yang akurat dan dapat disesuaikan. Aplikasi ini secara otomatis mendeteksi lokasi pengguna untuk menghitung jadwal sholat harian dan menyajikannya dalam antarmuka yang bersih, modern, dan mudah dibaca. Selain itu, aplikasi ini dilengkapi dengan alarm adzan yang dapat dikonfigurasi, penyesuaian tanggal Hijriah, dan berbagai metode perhitungan untuk memenuhi kebutuhan pengguna di seluruh dunia.
 
 Proyek ini dibangun dari awal menggunakan framework React Native dan Expo, dengan fokus pada pengalaman pengguna yang lancar dan fungsionalitas yang andal, baik online maupun offline.
